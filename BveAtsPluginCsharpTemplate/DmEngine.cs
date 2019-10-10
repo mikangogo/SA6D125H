@@ -440,7 +440,7 @@ namespace AtsPlugin
                         {
                             CcsSyncingState = SynchingState.WaitOperation;
                             CurrentDrivingState = DrivingState.Synching;
-                            if (absoluteVelocity < TransitionVelocityPositive[(int)GearPositionState.Mission1])
+                            if (absoluteVelocity < TransitionVelocityNegative[(int)GearPositionState.Mission1])
                             {
                                 OrderedGearPosition = GearPositionState.Mission1;
                             }
