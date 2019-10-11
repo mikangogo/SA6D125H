@@ -593,9 +593,13 @@ namespace AtsPlugin
                                     case GearPositionState.Mission1:
                                         diffRpm = InRpm - gear1Rpm;
 
+                                        OutFuelInjectionCurrent = gear1TargetFuelCurrent;
+
                                         break;
                                     case GearPositionState.Mission2:
                                         diffRpm = InRpm - gear2Rpm;
+
+                                        OutFuelInjectionCurrent = gear2TargetFuelCurrent;
 
                                         break;
                                 }
@@ -637,11 +641,15 @@ namespace AtsPlugin
                                         Gear1Clutch.InEngaged = true;
                                         Gear2Clutch.InEngaged = false;
 
+                                        OutFuelInjectionCurrent = gear1TargetFuelCurrent;
+
                                         break;
 
                                     case GearPositionState.Mission2:
                                         Gear1Clutch.InEngaged = false;
                                         Gear2Clutch.InEngaged = true;
+
+                                        OutFuelInjectionCurrent = gear2TargetFuelCurrent;
 
                                         break;
                                 }
@@ -659,11 +667,15 @@ namespace AtsPlugin
                                         Gear1Clutch.InEngaged = true;
                                         Gear2Clutch.InEngaged = false;
 
+                                        OutFuelInjectionCurrent = gear1TargetFuelCurrent;
+
                                         break;
 
                                     case GearPositionState.Mission2:
                                         Gear1Clutch.InEngaged = false;
                                         Gear2Clutch.InEngaged = true;
+
+                                        OutFuelInjectionCurrent = gear2TargetFuelCurrent;
 
                                         break;
                                 }
